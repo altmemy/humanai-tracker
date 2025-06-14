@@ -1,0 +1,284 @@
+{
+  "name": "humanai-tracker",
+  "displayName": "HumanAI Tracker",
+  "description": "🤖✨ Track your coding time and analyze the balance between manual coding and AI assistance. Get insights, unlock achievements, and optimize your development workflow!",
+  "version": "0.1.1",
+  "publisher": "humanai-tracker",
+  "author": {
+    "name": "HumanAI Tracker Team",
+    "email": "mosht9876@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/altmemy/humanai-tracker#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/altmemy/humanai-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altmemy/humanai-tracker/issues"
+  },
+  "keywords": [
+    "time tracking",
+    "ai assistance",
+    "productivity",
+    "analytics",
+    "coding metrics",
+    "github copilot",
+    "artificial intelligence",
+    "developer tools",
+    "gamification",
+    "achievements"
+  ],
+  "main": "./out/extension.js",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "build": "npm run compile",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "test": "node ./out/test/runTest.js",
+    "clean": "rimraf out",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "engines": {
+    "vscode": "^1.101.0",
+    "node": ">=16.0.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Data Science"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "HumanAI Tracker",
+      "properties": {
+        "humanai-tracker.enableTracking": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable time tracking"
+        },
+        "humanai-tracker.aiPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "copilot",
+            "tabnine",
+            "kite",
+            "codewhisperer",
+            "chatgpt",
+            "claude",
+            "bard",
+            "github.copilot",
+            "ai-generated",
+            "auto-generated"
+          ],
+          "description": "AI tools and patterns to detect in code"
+        },
+        "humanai-tracker.idleTimeout": {
+          "type": "number",
+          "default": 300,
+          "description": "Idle timeout in seconds"
+        },
+        "humanai-tracker.dailyGoal": {
+          "type": "number",
+          "default": 240,
+          "description": "Daily coding goal in minutes"
+        },
+        "humanai-tracker.detectLargePastes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Detect large code pastes from external sources as AI-assisted"
+        },
+        "humanai-tracker.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show/hide the status bar item"
+        },
+        "humanai-tracker.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable achievement and goal notifications"
+        },
+        "humanai-tracker.trackLanguages": {
+          "type": "boolean",
+          "default": true,
+          "description": "Track time per programming language"
+        },
+        "humanai-tracker.trackProjectTime": {
+          "type": "boolean",
+          "default": true,
+          "description": "Track time per project/workspace"
+        },
+        "humanai-tracker.rapidTypingThreshold": {
+          "type": "number",
+          "default": 150,
+          "description": "Characters per minute threshold to detect rapid typing (AI assistance)"
+        },
+        "humanai-tracker.enableAchievements": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the achievement system"
+        },
+        "humanai-tracker.goalReminders": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reminders when approaching daily goals"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "humanai-tracker.showDashboard",
+        "title": "Show Dashboard",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.toggleTracking",
+        "title": "Toggle Tracking",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.exportData",
+        "title": "Export Data",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.setDailyGoal",
+        "title": "Set Daily Goal",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.markAsAI",
+        "title": "Mark Current Session as AI-Assisted",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.markAsHuman",
+        "title": "Mark Current Session as Human-Coded",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.viewAchievements",
+        "title": "View Achievements",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.quickStats",
+        "title": "Show Quick Stats",
+        "category": "HumanAI Tracker"
+      },
+      {
+        "command": "humanai-tracker.resetDailyStats",
+        "title": "Reset Daily Statistics",
+        "category": "HumanAI Tracker"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "humanai-tracker",
+          "title": "HumanAI Tracker",
+          "icon": "$(pulse)"
+        }
+      ]
+    },
+    "views": {
+      "humanai-tracker": [
+        {
+          "id": "humanai-tracker.stats",
+          "name": "Coding Stats",
+          "when": "true",
+          "icon": "$(graph)"
+        },
+        {
+          "id": "humanai-tracker.achievements",
+          "name": "Achievements",
+          "when": "true",
+          "icon": "$(trophy)"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "humanai-tracker.showDashboard",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d"
+      },
+      {
+        "command": "humanai-tracker.toggleTracking",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t"
+      },
+      {
+        "command": "humanai-tracker.markAsAI",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a"
+      },
+      {
+        "command": "humanai-tracker.markAsHuman",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "humanai-tracker.showDashboard"
+        },
+        {
+          "command": "humanai-tracker.toggleTracking"
+        },
+        {
+          "command": "humanai-tracker.exportData"
+        },
+        {
+          "command": "humanai-tracker.setDailyGoal"
+        },
+        {
+          "command": "humanai-tracker.markAsAI"
+        },
+        {
+          "command": "humanai-tracker.markAsHuman"
+        },
+        {
+          "command": "humanai-tracker.viewAchievements"
+        },
+        {
+          "command": "humanai-tracker.quickStats"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^18.19.111",
+    "@types/vscode": "^1.101.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^2.32.0",
+    "eslint": "^8.57.0",
+    "glob": "^11.0.3",
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  }
+}
