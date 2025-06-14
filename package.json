@@ -2,10 +2,10 @@
   "name": "humanai-tracker",
   "displayName": "HumanAI Tracker",
   "description": "🤖✨ Track your coding time and analyze the balance between manual coding and AI assistance. Get insights, unlock achievements, and optimize your development workflow!",
-  "version": "0.1.3",
-  "publisher": "humanai-tracker",
+  "version": "1.0.0",
+  "publisher": "altmemy",
   "author": {
-    "name": "HumanAI Tracker Team",
+    "name": "Altmemy",
     "email": "mosht9876@gmail.com"
   },
   "license": "Apache-2.0",
