@@ -6,10 +6,11 @@
 
 ### _VS Code Extension for Intelligent Code Time Tracking_
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge&logo=visual-studio-code)](package.json)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue.svg?style=for-the-badge&logo=visual-studio-code)](package.json)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg?style=for-the-badge&logo=apache)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue.svg?style=for-the-badge&logo=typescript)](src/)
 [![VS Code API](https://img.shields.io/badge/VS%20Code-1.74+-purple.svg?style=for-the-badge&logo=visual-studio-code)](package.json)
+[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=altmemy.humanai-tracker)
 
   <p align="center">
     <b>Track the balance between human creativity and AI assistance.</b><br>
@@ -17,7 +18,7 @@
   </p>
 
   <p align="center">
-    <em>📋 Current Status: v1.0.0 - Core functionality implemented</em>
+    <em>📋 Current Status: v1.0.2 - Available on VS Code Marketplace</em>
   </p>
 
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="rainbow line">
@@ -189,19 +190,19 @@
 
   <p><em>Optimized for long coding sessions with eye-friendly colors and smooth animations</em></p>
 
-  <img src="media/dashboard1.png" alt="Main Dashboard Preview" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
+  <img src="https://raw.githubusercontent.com/altmemy/humanai-tracker/main/media/dashboard1.png" alt="Main Dashboard Preview" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
 
 ### 📊 Real-time Analytics & Charts
 
   <p><em>Comprehensive tracking with beautiful visualizations</em></p>
 
-  <img src="media/dashboard2.png" alt="Analytics Dashboard" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
+  <img src="https://raw.githubusercontent.com/altmemy/humanai-tracker/main/media/dashboard2.png" alt="Analytics Dashboard" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
 
 ### 🏆 Achievement System & Progress Tracking
 
   <p><em>Gamified experience with detailed progress monitoring</em></p>
 
-  <img src="media/dashboard3.png" alt="Achievement Dashboard" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
+  <img src="https://raw.githubusercontent.com/altmemy/humanai-tracker/main/media/dashboard3.png" alt="Achievement Dashboard" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" width="800">
 
 </div>
 
@@ -984,8 +985,14 @@ If HumanAI Tracker helps your productivity:
 
 ### Transform your coding experience with intelligent tracking
 
-[![Install Standard](https://img.shields.io/badge/Install-Current%20Version-blue?style=for-the-badge&logo=visual-studio-code)](humanai-tracker-1.0.0.vsix)
-[![Install Dev](https://img.shields.io/badge/Install-Development%20Version-purple?style=for-the-badge&logo=visual-studio-code)](humanai-tracker-professional-v1.0.1.vsix)
+[![Install from VS Code Marketplace](https://img.shields.io/badge/Install%20from-VS%20Code%20Marketplace-blue?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=altmemy.humanai-tracker)
+
+**🚀 Quick Install:**
+
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X)
+3. Search for "HumanAI Tracker"
+4. Click Install!
 
 ### 🎯 **Growing Community of Developers** Using Intelligent Tracking
 
@@ -1021,5 +1028,3 @@ limitations under the License.
   <b>Made with ❤️ by Altmemy</b><br>
   <sub>© 2025 Altmemy. All rights reserved.</sub>
 </p>
-
-</div>
